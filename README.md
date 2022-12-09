@@ -80,4 +80,5 @@ https://github.com/top-think/framework/commit/c4acb8b4001b98a0078eda25840d33e295
 
 公众号：
 
-![qrcode_for_gh_f2e957af2c09_344](https://fge7supload-1307552994.cos.ap-shanghai.myqcloud.com/markdown/qrcode_for_gh_f2e957af2c09_344.jpg)
+<div align=center> <img src="https://fge7supload-1307552994.cos.ap-shanghai.myqcloud.com/markdown/qrcode_for_gh_f2e957af2c09_344.jpg"/> </div>
+
