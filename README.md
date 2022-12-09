@@ -57,6 +57,13 @@ npm install --registry http://registry.npm.taobao.org
 node index.js
 ```
 
+## 修复漏洞
+
+官方已完成修复：
+
+https://github.com/top-think/framework/commit/c4acb8b4001b98a0078eda25840d33e295a7f099
+
+
 
 
 ## 免责任声明
