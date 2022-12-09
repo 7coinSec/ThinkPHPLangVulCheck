@@ -1,0 +1,17 @@
+{
+  "name": "thinkphplangcheck",
+  "version": "1.0.0",
+  "description": "a thinkphp lang check tools",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.2.1",
+    "cli-color": "^2.0.3",
+    "inquirer": "^8.2.5",
+    "line-reader": "^0.4.0"
+  }
+}
