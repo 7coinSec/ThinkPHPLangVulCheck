@@ -32,6 +32,13 @@
 
 仅限企业自检，请勿用于非法目的
 
+## 漏洞复现
+
+docker pull 7coinsec/thinkphp6013_lang_on
+docker run -it -d -p 12345:80 7coinsec/thinkphp6013_lang_on
+
+
+
 ## 直接使用
 
 下载编译好的文件
