@@ -57,6 +57,10 @@ npm install --registry http://registry.npm.taobao.org
 node index.js
 ```
 
+## 影响范围
+
+Thinkphp，v6.0.1~v6.0.13，v5.0.x，v5.1.x
+
 ## 修复漏洞
 
 官方已完成修复：
