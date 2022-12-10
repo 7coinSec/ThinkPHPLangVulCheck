@@ -32,6 +32,8 @@
 
 仅限企业自检，请勿用于非法目的
 
+![image](images/image.jpg)
+
 ## 漏洞复现
 
 docker pull 7coinsec/thinkphp6013_lang_on
