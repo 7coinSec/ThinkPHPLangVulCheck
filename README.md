@@ -37,6 +37,7 @@
 ## 漏洞复现
 
 docker pull 7coinsec/thinkphp6013_lang_on
+
 docker run -it -d -p 12345:80 7coinsec/thinkphp6013_lang_on
 
 
